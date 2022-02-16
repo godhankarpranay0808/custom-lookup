@@ -1,0 +1,54 @@
+<template>  
+    <div class="slds-box">  
+      <c-lwc-lookup lookup-label="Account" object-api-name="account" icon-name="standard:account"  
+        onrecordselection={onAccountSelection}></c-lwc-lookup>  
+    </div>  
+    <div class="slds-box">  
+      Selected Account Name : {accountName}  
+       
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" border="1" cellspacing="0" cellpadding="0"  style="border-collapse:collapse;">
+    
+        <thead>
+        
+        <tr>
+        
+        <th>First Name</th>
+        
+        <th>Last Name</th>
+        
+        <th>Email</th>
+        
+        <th>Phone</th>
+        
+        <th>Description</th>
+        
+        </tr>
+        
+        </thead>
+        
+        <tbody>
+        
+        <template for:each={records} for:item="conItem">
+        
+        <tr key={conItem.Id}>
+        
+        <td>{conItem.FirstName}</td>
+        
+        <td>{conItem.LastName}</td>
+        
+        <td>{conItem.Email}</td>
+        
+        <td>{conItem.Phone}</td>
+        
+        <td>{conItem.Account.Name}</td>
+        
+        </tr>
+        
+        </template>
+        
+        </tbody>
+        
+        </table>  
+    </div>
+  </template>
